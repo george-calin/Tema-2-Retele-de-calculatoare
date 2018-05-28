@@ -2,7 +2,7 @@ from scapy.all import *
 
 eth = Ether(dst = "ff:ff:ff:ff:ff:ff")
 arp = ARP(pdst = "198.13.13.0/16")
-ans, unans = srp(eth / arp, timeout = 5)
+ans, unans = srp(eth / arp)
 
 if len(ans):
 	print ans[0][1].pdst + " -- " + ans[0][1].hwdst
